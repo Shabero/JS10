@@ -32,7 +32,8 @@ submit.addEventListener('click', () => {
         .then(json => {
             name.innerHTML = json.name
             color.innerHTML = json.hair_color
-            fetch(`https://swapi.dev/api/vehicles/${value}`)
+            vehicleUrl = json.vehicle[0]
+            fetch(vehicleUrl)
                 .then(response => response.json())
                 .then(json => {
                     vehicle.innerHTML = json.vehicle
