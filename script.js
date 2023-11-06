@@ -1,22 +1,3 @@
-// setTimeout(() => {
-//     console.log(123);
-// }, 2000)
-// const handleInterval = setInterval(() => {
-//     console.log('its interval');
-// }, 2000)
-//
-// const handleClear = () => {
-//     clearInterval(handleInterval)
-// }
-//
-// setTimeout(() => {
-//     handleClear()
-// }, 10000)
-//
-// console.log(333)
-// console.log('hello')
-// console.log('world')
-
 const name = document.querySelector('#name')
 const color = document.querySelector('#color')
 const vehicle = document.querySelector('#vehicle')
@@ -29,16 +10,17 @@ submit.addEventListener('click', () => {
     let value = input.value
     fetch(`https://swapi.dev/api/people/${value}`)
         .then(response => response.json())
-        .then(json => {
-            name.innerHTML = json.name
-            color.innerHTML = json.hair_color
-            vehicleUrl = json.vehicle[0]
+        .then(personInfo => {
+            name.innerHTML = personInfo.name
+            color.innerHTML = personInfo.hair_color
+            vehicleUrl = personInfo.vehicles[0]
             fetch(vehicleUrl)
-                .then(response => response.json())
-                .then(json => {
-                    vehicle.innerHTML = json.vehicle
-                    model.innerHTML = json.model
-                    manufacturer.innerHTML = json.manufacturer
+                .then(res => res.json())
+                .then(vehicleInfo => {
+                    vehicle.innerHTML = vehicleInfo.vehicle
+                    model.innerHTML = vehicleInfo.model
+                    manufacturer.innerHTML = vehicleInfo.manufacturer
                 })
         })
 })
+
