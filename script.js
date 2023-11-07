@@ -5,8 +5,6 @@ const model = document.querySelector('#model')
 const manufacturer = document.querySelector('#manufacturer')
 const input = document.querySelector('#input')
 const submit = document.querySelector('#submit')
-const getCat = document.querySelector('#get-cat')
-const cat = document.querySelector('#cat')
 
 
 submit.addEventListener('click', () => {
@@ -27,6 +25,8 @@ submit.addEventListener('click', () => {
         })
 })
 
+const getCat = document.querySelector('#get-cat')
+const cat = document.querySelector('#cat')
 const apiToken = 'live_Zc4tnamzIqO5XLpMD8aXqETRSVqpdasICqw0bsSiuJ6Hkh6OKyb3o7mkgTJqonnI'
 getCat.addEventListener('click', () => {
     fetch('https://api.thecatapi.com/v1/images/search')

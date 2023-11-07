@@ -14,6 +14,14 @@
     margin-top: 50px;
     gap: 20px;
 }
+.input-window-info{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 200px;
+}
+
 .input-window button {
     width: 100px;
     height: 50px;
@@ -64,8 +72,8 @@ img{
     height: 50px;
     border-radius: 7px;
     border: 2px solid #000;
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-size: 20px;
     margin-bottom: 100px;
 }
